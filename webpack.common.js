@@ -2,9 +2,6 @@ const WebpackPwaManifestPlugin = require('webpack-pwa-manifest')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
-const ImageminMozjpeg = require('imagemin-mozjpeg')
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const webpack = require('webpack')
 const path = require('path')
@@ -90,24 +87,6 @@ module.exports = {
       ]
     }),
 
-    new ImageminWebpackPlugin({
-      plugins: [ImageminMozjpeg({
-        quality: 50,
-        progressive: true
-      })]
-    }),
-
-    new ImageminWebpWebpackPlugin({
-      config: [
-        {
-          test: /\.(jpe?g|png)/,
-          options: {
-            quality: 50
-          }
-        }
-      ],
-      overrideExtension: true
-    }),
     new webpack.ProgressPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',

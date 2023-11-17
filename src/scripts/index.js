@@ -5,8 +5,6 @@ import '../styles/style.scss'
 import '../scripts/components/app-bar.js'
 import '../scripts/components/hero-element'
 import '../../src/public/font-awesome.js'
-import 'lazysizes'
-import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 import App from './views/app'
 import swRegister from './utils/sw-register'
 
